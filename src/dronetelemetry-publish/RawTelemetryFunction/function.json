@@ -1,0 +1,16 @@
+{
+  "generatedBy": "Microsoft.NET.Sdk.Functions-1.0.28",
+  "configurationSource": "attributes",
+  "bindings": [
+    {
+      "type": "eventHubTrigger",
+      "connection": "EventHubConnection",
+      "consumerGroup": "%EventHubConsumerGroup%",
+      "eventHubName": "%EventHubName%",
+      "name": "messages"
+    }
+  ],
+  "disabled": false,
+  "scriptFile": "../bin/DroneTelemetryFunctionApp.dll",
+  "entryPoint": "DroneTelemetryFunctionApp.RawTelemetryFunction.RunAsync"
+}
