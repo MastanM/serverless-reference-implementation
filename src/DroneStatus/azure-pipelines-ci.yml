@@ -1,6 +1,19 @@
 steps:
 
+- task: UseDotNet@2
+  displayName: 'Use .Net Core sdk 2.1.x'
+  inputs:
+    packageType: sdk
+    version: 2.1.x
+    installationPath: $(Agent.ToolsDirectory)
+    includePreviewVersions: true
+
+- task: NuGetToolInstaller@1
+  inputs:
+    versionSpec: 5.8
+
 # Restore
+
 - task: DotNetCoreCLI@2
   displayName: Restore
   inputs:
@@ -31,6 +44,8 @@ steps:
   enabled: true
 
 # Publish
+
+   
 - task: DotNetCoreCLI@2
   displayName: Publish
   inputs:
